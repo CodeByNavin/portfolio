@@ -10,9 +10,9 @@ export default function Header() {
 	const [collapsed, setCollapsed] = useState(false);
 	return (
 		<>
-			<div className='relative flex flex-row items-center justify-between p-6 px-10 w-screen select-none'>
-				<span className='text-3xl font-ubuntu text-neutral-200 font-semibold tracking-wide'>Navin</span>
-				<div className='absolute flex flex-row-reverse max-lg:flex-col items-center gap-6 top-6 right-10 w-fit max-lg:w-12'>
+			<div className='relative flex flex-row items-center justify-between px-[1.2rem] py-6 w-screen select-none z-50'>
+				<span className='text-3xl font-ubuntu text-neutral-200 font-semibold tracking-wide w-fit'>Navin</span>
+				<div className='absolute flex flex-row-reverse max-lg:flex-col items-center gap-6 lg:h-full max-lg:top-6 right-10 w-fit max-lg:w-12'>
 				<ChevronRightIcon
 						className={`size-7 ${
 							collapsed ? 'rotate-0' : 'max-lg:rotate-90 rotate-180'
@@ -26,7 +26,7 @@ export default function Header() {
 								initial='hidden'
 								animate='visible'
 								exit='exit'
-								variants={{collapsedXVarients}}
+								variants={collapsedXVarients}
 								transition={{ duration: 0.5, ease: 'easeInOut' }}
 								className='flex flex-row max-lg:flex-col items-center gap-8 text-neutral-400 navS'
 							>
@@ -35,7 +35,7 @@ export default function Header() {
 								<Link href={'#'}>Skills</Link>
 								<Link
 									href={'#'}
-									className='bg-red-500 text-white rounded-2xl duration-300 hover:scale-110 px-4 p-1'
+									className='bg-red-500/70 text-white rounded-2xl duration-300 hover:scale-110 px-4 p-1'
 								>
 									Contact
 								</Link>
