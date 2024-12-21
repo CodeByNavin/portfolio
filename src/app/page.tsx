@@ -23,7 +23,7 @@ export default function Home() {
 						</div>
 					</div>
 
-					<div className='relative flex flex-col gap-2 w-fit max-xl:mx-32 h-fit p-8 max-lg:gap-4 max-lg:px-20 max-lg:text-nowrap xl:max-w-2xl'>
+					<div className='relative flex flex-col gap-2 h-fit p-8 max-lg:gap-4 max-lg:px-24 max-lg:text-nowrap max-xl:max-w-xl 2xl:max-w-xl'>
 						<div className='absolute w-1 h-12 top-0 left-0 bg-red-500' />
 						<div className='absolute w-1 h-12 -top-6 left-[1.25rem] translate-x-1/2 bg-red-500 rotate-90' />
 						<div className='absolute top-0 right-4 size-3 bg-white/70 rotate-45' />
