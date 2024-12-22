@@ -29,7 +29,7 @@ export default function Home() {
 						<div className='absolute top-0 right-4 size-3 bg-white/70 rotate-45' />
 						<div className='absolute top-6 -right-1 size-3 bg-white/70 rotate-45' />
 						<h1 className='font-poppins text-3xl'>About Me</h1>
-						<span className='max-lg:hidden'>
+						<span className='max-lg:hidden max'>
 							As a backend developer and the founder of Baymax APIs, I specialize in creating
 							powerful APIs that drive innovation and efficiency. With a deep love for coding
 							and problem-solving, I thrive on delivering solutions that make a real impact.
@@ -39,16 +39,19 @@ export default function Home() {
 						</button>
 					</div>
 				</section>
-
 				<div className='absolute top-0 left-0 h-screen w-32 bg-red-500/65 max-lg:hidden' />
-
-				<Link
-					href='https://discord.com/users/863508137080127518'
-					target='_blank'
-					className='absolute bottom-6 right-6 w-[50px] h-[50px] hover:scale-110 duration-300 cursor-pointer z-10'
-				>
-					<Image src={'/profile.png'} alt='profile' fill={true} className='rounded-full' />
-				</Link>
+				<div className='absolute bottom-6 right-5 group'>
+					<Link
+						href='https://discord.com/users/863508137080127518'
+						target='_blank'
+						className='absolute bottom-1 right-1 w-[50px] h-[50px] hover:scale-110 duration-300 cursor-pointer z-10'
+					>
+						<Image src={'/profile.png'} alt='profile' fill={true} className='rounded-full' />
+					</Link>
+					<div className='absolute hidden group-hover:block bottom-16 right-0 w-32 p-2 text-center bg-neutral-900 text-white rounded-lg shadow-md duration-300 transition-all'>
+						<span className='text-sm'>Feel free to reach out for any questions!</span>
+					</div>
+				</div>
 			</div>
 		</>
 	);
