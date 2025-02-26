@@ -1,14 +1,10 @@
 "use server"
-import getSchema from '@/app/server/db'
+import { GetProjects as GetAllProjects } from '@/server/server'
 
 export default async function GetProjects() {
     try {
-        const Schema = await getSchema('Projects')
-
-        if (!Schema) return null
-
-        const Projects = await Schema.find()
-        return JSON.stringify(Projects);
+        const result = await GetAllProjects()
+        return JSON.parse(result as string);
     } catch (error) {
         console.log(error)
         return null;

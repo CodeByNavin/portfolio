@@ -12,8 +12,7 @@ export default function Projects() {
 
     useEffect(() => {
         const FetchProjects = async () => {
-            let Projects = await GetProjects();
-            Projects = JSON.parse(Projects as any);
+            const Projects = await GetProjects();
             setProjects(Projects as any);
         };
 

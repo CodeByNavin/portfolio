@@ -1,19 +1,9 @@
 "use server"
-import getSchema from '@/app/server/db'
+import { DeleteProject as Delete_Project } from '@/server/server'
 
 export default async function DeleteProject(DeleteProject: any) {
     try {
-        const Schema = await getSchema('Projects')
-
-        if (!Schema) {
-            console.log('Schema not found')
-            return null;
-        }
-
-        await Schema.findOneAndDelete(
-            { _id: DeleteProject._id },
-            DeleteProject,
-        )
+        await Delete_Project(DeleteProject)
         return true;
     } catch (error) {
         console.log(error)

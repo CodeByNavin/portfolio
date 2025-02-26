@@ -1,20 +1,9 @@
 "use server"
-import getSchema from '@/app/server/db'
+import { UpdateProject as Update_Project } from '@/server/server'
 
 export default async function UpdateProject(updatedProject: any) {
     try {
-        const Schema = await getSchema('Projects')
-
-        if (!Schema) {
-            console.log('Schema not found')
-            return null;
-        }
-
-        await Schema.findOneAndUpdate(
-            { _id: updatedProject._id },
-            updatedProject,
-            { upsert: true, new: true }
-        )
+        await Update_Project(updatedProject)
         return true;
     } catch (error) {
         console.log(error)

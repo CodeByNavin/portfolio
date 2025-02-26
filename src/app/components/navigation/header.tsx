@@ -76,7 +76,7 @@ export default function Header({
 										href="/signin"
 										className='bg-red-500/70 text-white rounded-2xl px-2 duration-300 hover:scale-110 p-1'
 									>
-										SignIn
+										Sign In
 									</Link>
 								) : (
 									<button
