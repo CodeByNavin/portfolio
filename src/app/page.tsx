@@ -1,12 +1,18 @@
+"use client"
 import Image from 'next/image';
 import Header from './components/navigation/header';
 import Link from 'next/link';
 
 export default function Home() {
+
+
 	return (
 		<>
 			<div className='flex flex-col relative h-screen bg-neutral-800 overflow-hidden'>
-				<Header />
+				<Header
+					isMenuOpen={true}
+					setIsMenuOpen={() => { }}
+				/>
 				<section className='relative flex items-center justify-center gap-64 px-48 h-full w-full text-white -translate-y-28 z-10 lg:translate-x-14 max-xl:flex-col max-xl:justify-center max-xl:gap-24 max-xl:translate-y-0'>
 					<div className='relative flex flex-col items-center w-fit h-fit gap-8 max-lg:p-16 p-16'>
 						<div className='flex flex-col text-nowrap'>
@@ -29,14 +35,11 @@ export default function Home() {
 						<div className='absolute top-0 right-4 size-3 bg-white/70 rotate-45' />
 						<div className='absolute top-6 -right-1 size-3 bg-white/70 rotate-45' />
 						<h1 className='font-poppins text-3xl'>About Me</h1>
-						<span className='max-lg:hidden max'>
+						<span className='max-lg text-wrap'>
 							As a backend developer and the founder of Baymax APIs, I specialize in creating
 							powerful APIs that drive innovation and efficiency. With a deep love for coding
 							and problem-solving, I thrive on delivering solutions that make a real impact.
 						</span>
-						<button className='hidden max-lg:flex justify-center w-full h-full bg-red-500 p-2 rounded-xl hover:scale-110 duration-300'>
-							Click me!
-						</button>
 					</div>
 				</section>
 				<div className='absolute top-0 left-0 h-screen w-32 bg-red-500/65 max-lg:hidden' />

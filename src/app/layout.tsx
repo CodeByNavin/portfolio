@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Wrapper } from '@/app/Wrapper'
 
 export const metadata: Metadata = {
   title: "Navin",
@@ -13,9 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        {children}
+      <body>
+        <Wrapper>
+          {children}
+        </Wrapper>
       </body>
     </html>
   );

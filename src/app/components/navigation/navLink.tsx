@@ -6,7 +6,7 @@ export default function navLink({ name }: { name: string }) {
 
 	return (
 		<>
-			<Link href={name.toLowerCase()} className={`${pathname === name.toLowerCase() ? 'text-white' : 'hover:text-white'} duration-300`}>
+			<Link href={`/${name.toLowerCase()}`} className={`${pathname === name.toLowerCase() ? 'text-white' : 'hover:text-white'} duration-300`}>
 				{name}
 			</Link>
 		</>

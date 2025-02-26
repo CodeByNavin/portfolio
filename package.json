@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "framer-motion": "^11.13.5",
+    "framer-motion": "^11.18.2",
+    "heroicons": "^2.2.0",
+    "mongoose": "^8.10.1",
     "next": "15.1.0",
+    "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
