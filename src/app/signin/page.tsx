@@ -53,6 +53,7 @@ export default function SignInPage() {
             <Header
                 isMenuOpen={true}
                 setIsMenuOpen={() => { }}
+                showArrow={false}
             />
             <section className='pt-14 relative flex flex-col items-center justify-center gap-8 px-6 md:px-12 lg:px-48 h-full w-full text-white z-10'>
                 <div className='relative flex flex-col gap-4 p-6 max-w-full'>

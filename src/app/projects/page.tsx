@@ -25,6 +25,7 @@ export default function Projects() {
                 <Header
                     setIsMenuOpen={() => { }}
                     isMenuOpen={true}
+                    showArrow={false}
                 />
                 <section className='pt-14 relative flex flex-col items-center justify-center px-6 md:px-12 lg:px-48 h-full w-full text-white z-10'>
                     <div className='relative flex flex-wrap justify-center gap-6 p-6 w-full text-wrap'>

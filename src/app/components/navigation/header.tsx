@@ -10,10 +10,12 @@ import { useSession, signOut } from 'next-auth/react'
 
 export default function Header({
 	isMenuOpen,
-	setIsMenuOpen
+	setIsMenuOpen,
+	showArrow
 }: {
 	isMenuOpen: boolean;
 	setIsMenuOpen: (value: boolean) => void;
+	showArrow: boolean;
 }) {
 	const [collapsed, setCollapsed] = useState<boolean>(false);
 
@@ -37,13 +39,15 @@ export default function Header({
 	return (
 		<>
 			<div className='fixed flex flex-row items-center justify-between px-[1.2rem] py-6 w-screen select-none z-50'>
-				<div>
-					<ChevronRightIcon
-						className={`size-5 ${isMenuOpen ? 'rotate-0' : 'max-lg:rotate-90 rotate-180'
-							} lg:duration-700 duration-500 text-neutral-300 cursor-pointer `}
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-					/>
-				</div>
+				{showArrow === true && (
+					<div>
+						<ChevronRightIcon
+							className={`size-5 ${isMenuOpen ? 'rotate-0' : 'max-lg:rotate-90 rotate-180'
+								} lg:duration-700 duration-500 text-neutral-300 cursor-pointer `}
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+						/>
+					</div>
+				)}
 
 
 				<div className='absolute flex flex-row-reverse max-lg:flex-col items-center gap-6 lg:h-full max-lg:top-6 right-10 w-fit max-lg:w-12'>

@@ -83,7 +83,11 @@ export default function Admin() {
                 />
             </div>
 
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+            <Header 
+                isMenuOpen={isMenuOpen} 
+                setIsMenuOpen={setIsMenuOpen} 
+                showArrow={true}
+            />
 
             {/* Main content area */}
             <section className={`overflow-y-hidden flex flex-col md:flex-row gap-8 px-4 py-4 mt-9 transition-all duration-300 ${isMenuOpen ? 'md:ml-[250px]' : ''}`}>

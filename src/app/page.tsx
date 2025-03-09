@@ -11,6 +11,7 @@ export default function Home() {
 				<Header
 					isMenuOpen={true}
 					setIsMenuOpen={() => { }}
+					showArrow={false}
 				/>
 				<section className='relative flex items-center justify-center gap-64 px-48 h-full w-full text-white -translate-y-28 z-10 lg:translate-x-14 max-xl:flex-col max-xl:justify-center max-xl:gap-24 max-xl:translate-y-0'>
 					<div className='relative flex flex-col items-center w-fit h-fit gap-8 max-lg:p-16 p-16'>

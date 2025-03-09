@@ -18,7 +18,11 @@ export default function AboutMe() {
 
     return (
         <div className='bg-neutral-800 text-white min-h-screen'>
-            <Header setIsMenuOpen={() => { }} isMenuOpen={true} />
+            <Header 
+                isMenuOpen={true} 
+                setIsMenuOpen={() => { }} 
+                showArrow={false}
+            />
 
             <section className='relative pt-16 pb-24'>
                 <div className="container mx-auto px-6 text-center">
@@ -51,7 +55,7 @@ export default function AboutMe() {
                     <div className="max-w-3xl mx-auto mb-16">
                         <h2 className="text-2xl font-semibold mb-4">What I Do</h2>
                         <p className="text-lg text-neutral-400">
-                            I create applications that provide clean, efficient, and scalable solutions for individuals.
+                            I create applications that are both clean and efficient for individuals.
                             My focus is on frontend and backend development, delivering interactive user interfaces and seamless functionality.
                         </p>
                     </div>

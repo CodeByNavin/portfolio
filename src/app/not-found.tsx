@@ -8,6 +8,7 @@ export default function Custom404() {
             <Header
                 setIsMenuOpen={() => { }}
                 isMenuOpen={true}
+                showArrow={false}
             />
             <section className='pt-14 relative flex flex-col items-center justify-center px-6 md:px-12 lg:px-48 h-full w-full text-white z-10'>
                 <h1 className='text-6xl font-bold'>404</h1>

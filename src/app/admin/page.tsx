@@ -12,6 +12,7 @@ export default function Admin() {
             <Header
                 isMenuOpen={isMenuOpen}
                 setIsMenuOpen={setIsMenuOpen}
+                showArrow={true}
             />
             <nav className='flex flex-col gap-2'>
                 <SideNav
