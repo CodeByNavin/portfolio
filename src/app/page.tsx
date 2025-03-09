@@ -19,12 +19,6 @@ export default function Home() {
 							<div className='absolute bottom-0 right-0 size-5 bg-neutral-900/60 rotate-45' />
 							<h2 className='font-poppins text-red-500'>Hey, I am</h2>
 							<h1 className='text-4xl font-semibold'>Navin (Baymax) </h1>
-							<h3 className='pt-2 text-lg border-b-4 border-b-red-500 pb-1 w-fit font-semibold'>
-								Founder of{' '}
-								<span className='hover:text-red-500 duration-500 cursor-pointer'>
-									Baymax API's
-								</span>
-							</h3>
 						</div>
 					</div>
 
@@ -35,7 +29,7 @@ export default function Home() {
 						<div className='absolute top-6 -right-1 size-3 bg-white/70 rotate-45' />
 						<h1 className='font-poppins text-3xl'>About Me</h1>
 						<span className='max-lg text-wrap'>
-							I am a full-stack developer, creating and solving tasks as they come.
+							I am a full-stack developer, with a passion for technology making different types of applications.
 						</span>
 					</div>
 				</section>
