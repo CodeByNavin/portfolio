@@ -51,9 +51,8 @@ export default function AboutMe() {
                     <div className="max-w-3xl mx-auto mb-16">
                         <h2 className="text-2xl font-semibold mb-4">What I Do</h2>
                         <p className="text-lg text-neutral-400">
-                            I create web applications that provide clean, efficient, and scalable solutions for businesses and individuals.
+                            I create applications that provide clean, efficient, and scalable solutions for individuals.
                             My focus is on frontend and backend development, delivering interactive user interfaces and seamless functionality.
-                            I have experience working with both startups and established companies, and I love the challenge of solving complex problems.
                         </p>
                     </div>
 
