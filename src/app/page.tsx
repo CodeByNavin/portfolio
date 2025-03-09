@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export default function Home() {
 
-
 	return (
 		<>
 			<div className='flex flex-col relative h-screen bg-neutral-800 overflow-hidden'>
@@ -36,9 +35,7 @@ export default function Home() {
 						<div className='absolute top-6 -right-1 size-3 bg-white/70 rotate-45' />
 						<h1 className='font-poppins text-3xl'>About Me</h1>
 						<span className='max-lg text-wrap'>
-							As a backend developer and the founder of Baymax APIs, I specialize in creating
-							powerful APIs that drive innovation and efficiency. With a deep love for coding
-							and problem-solving, I thrive on delivering solutions that make a real impact.
+							I am a full-stack developer, creating and solving tasks as they come.
 						</span>
 					</div>
 				</section>
