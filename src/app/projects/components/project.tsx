@@ -6,7 +6,7 @@ export default function Project({
 }: {
     data: any;
 }) {
-    console.log(data);
+
     return (
         <div className="flex flex-col items-center relative pt-5 px-6 max-w-[600px]">
             {/* Red corner divs are now inside this container, relative to it */}

@@ -53,12 +53,16 @@ export default function Admin() {
         console.log('Saving project:', updatedProject);
         await UpdateProject(updatedProject);
         setEditingProject(null);
+        setIsDropdownOpen(false)
+        setSelectedOptions([])
     };
 
     const handleDeleteProject = async (updatedProject: any) => {
         console.log('Deleting project:', updatedProject);
         await DeleteProject(updatedProject);
         setEditingProject(null);
+        setIsDropdownOpen(false)
+        setSelectedOptions([])
     };
 
     const FrameworkList = [
@@ -76,16 +80,16 @@ export default function Admin() {
     return (
         <div className='flex flex-col h-screen bg-neutral-800 text-white'>
             {/* SideNav for mobile */}
-            <div className="absolute top-0 left-0 z-50 md:hidden">
+            <div className="absolute top-0 left-0 z-50">
                 <SideNav
                     isMenuOpen={isMenuOpen}
                     setIsMenuOpen={setIsMenuOpen}
                 />
             </div>
 
-            <Header 
-                isMenuOpen={isMenuOpen} 
-                setIsMenuOpen={setIsMenuOpen} 
+            <Header
+                isMenuOpen={isMenuOpen}
+                setIsMenuOpen={setIsMenuOpen}
                 showArrow={true}
             />
 
@@ -93,7 +97,7 @@ export default function Admin() {
             <section className={`overflow-y-hidden flex flex-col md:flex-row gap-8 px-4 py-4 mt-9 transition-all duration-300 ${isMenuOpen ? 'md:ml-[250px]' : ''}`}>
                 {/* Left side - Projects List */}
                 <div className='flex-1 overflow-y-auto'>
-                    <div className="flex justify-between items-center mb-4">
+                    <div className="flex flex-col justify-between items-start mb-4">
                         <h2 className='text-lg font-semibold md:text-xl'>Projects</h2>
                         <button
                             className='p-2 bg-green-500 rounded'
@@ -102,20 +106,25 @@ export default function Admin() {
                             Create New Project
                         </button>
                     </div>
-                    <div className='space-y-4'>
+                    <div className='space-y-4 flex flex-col items-center'>
                         {Array.isArray(Projects) && Projects.map((project, index) => (
-                            <div key={index} className="flex justify-between items-center">
+                            <div key={index} className="flex flex-col justify-center items-center w-auto p-4 bg-neutral-700 rounded-md">
                                 <ProjectInfo data={project} />
-                                <button
-                                    className='p-4 bg-red-500/50 rounded'
-                                    onClick={() => setEditingProject(project)}
-                                >
-                                    Edit
-                                </button>
+                                <div className="flex justify-between w-full mt-4">
+                                    <button
+                                        className='p-2 bg-red-500/50 rounded'
+                                        onClick={() => setEditingProject(project)}
+                                    >
+                                        Edit
+                                    </button>
+                                </div>
                             </div>
                         ))}
                     </div>
+
                 </div>
+
+
 
                 {/* Middle divider */}
                 <div className='w-1 h-full bg-red-500 md:block hidden'></div>

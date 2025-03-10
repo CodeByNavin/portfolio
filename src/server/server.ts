@@ -45,10 +45,17 @@ export async function UpdateProject(updatedProject: any): Promise<boolean | null
 
         if (!Schema) return false
 
+        // Check if an _id exists, if not, treat as a new project
+        if (!updatedProject._id) {
+            // No _id, creating a new project
+            await Schema.create(updatedProject)
+            return true;
+        }
+
         await Schema.findOneAndUpdate(
             { _id: updatedProject._id },
             updatedProject,
-            { upsert: true, new: true }
+            { new: true } // Ensure it returns the updated document
         )
         return true;
     } catch (error) {
@@ -56,6 +63,8 @@ export async function UpdateProject(updatedProject: any): Promise<boolean | null
         return null;
     }
 }
+
+
 
 /**
  * 
