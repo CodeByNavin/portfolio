@@ -93,7 +93,7 @@ export default function AboutMe() {
                                 My Discord
                             </a>
                             <a
-                                href="https://github.com/Baymax1211"
+                                href="https://github.com/CodeByNavin"
                                 target="_blank"
                                 className="p-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 duration-300"
                             >
