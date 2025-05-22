@@ -1,23 +1,9 @@
 "use client";
 import Image from 'next/image';
 import Header from '@/app/components/navigation/header';
-import Link from 'next/link';
-import ProjectInfo from './components/project';
-import { useState, useEffect } from 'react';
-import GetProjects from './helpers/GetProjects';
+import ProjectInfo from '@/app/components/projects/project';
 
 export default function Projects() {
-
-    const [Projects, setProjects] = useState<any[] | unknown>([]);
-
-    useEffect(() => {
-        const FetchProjects = async () => {
-            const Projects = await GetProjects();
-            setProjects(Projects as any);
-        };
-
-        FetchProjects();
-    }, []);
 
     return (
         <>
@@ -29,24 +15,23 @@ export default function Projects() {
                 />
                 <section className='pt-14 relative flex flex-col items-center justify-center px-6 md:px-12 lg:px-48 h-full w-full text-white z-10'>
                     <div className='relative flex flex-wrap justify-center gap-6 p-6 w-full text-wrap'>
-                        {Array.isArray(Projects) && Projects.map((project: any, index: number) => (
-                            <ProjectInfo
-                                key={index}
-                                data={project}
-                            />
-                        ))}
+                        <ProjectInfo
+                            data={{
+                                title: 'Memory Game',
+                                timeline: 'May 19th - May 21st, 2025',
+                                description: 'A simple memory game where you have to find pairs of cards. The game is built using React and Tailwind CSS.',
+
+                                frameworks: ["JavaScript", "Node.js", "React", "Tailwind CSS", "TypeScript"]
+                            }}
+                        />
+                        
                     </div>
                 </section>
 
                 <div className='absolute top-0 left-0 h-screen w-32 bg-red-500/65 max-lg:hidden' />
                 <div className='absolute bottom-6 right-5 group'>
-                    <Link
-                        href='https://discord.com/users/863508137080127518'
-                        target='_blank'
-                        className='absolute bottom-1 right-1 w-[50px] h-[50px] hover:scale-110 duration-300 cursor-pointer z-10'
-                    >
-                        <Image src={'/profile.png'} alt='profile' fill={true} className='rounded-full' />
-                    </Link>
+
+                    <Image src={'/Navin.png'} alt='profile' fill={true} className='rounded-full' />
                     <div className='absolute hidden group-hover:block bottom-16 right-0 w-32 p-2 text-center bg-neutral-900 text-white rounded-lg shadow-md duration-300 transition-all'>
                         <span className='text-sm'>Feel free to reach out for any questions!</span>
                     </div>

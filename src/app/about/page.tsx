@@ -1,26 +1,24 @@
 "use client"
 import Image from 'next/image';
 import Header from '@/app/components/navigation/header';
+import { useEffect, useState } from 'react';
 
 export default function AboutMe() {
-    const frameworks: { name: string, logo: string }[] = [
-        { name: 'Discord.js', logo: '/discordjs.png' },
-        { name: 'Express', logo: '/express.svg' },
-        { name: 'JavaScript', logo: '/javascript.svg' },
-        { name: 'MongoDB', logo: '/mongodb.svg' },
-        { name: 'Mongoose', logo: '/mongoose.svg' },
-        { name: 'Next.js', logo: '/Nextjs.png' },
-        { name: 'Node.js', logo: '/nodejs.svg' },
-        { name: 'React', logo: '/react.svg' },
-        { name: 'Tailwind CSS', logo: '/tailwindcss.svg' },
-        { name: 'TypeScript', logo: '/typescript.svg' },
-    ];
+    const [frameworks, setFrameworks] = useState<{ name: string; logo: string }[]>([])
+
+    useEffect(() => {
+        fetch('/frameworks/main.json')
+            .then((response) => response.json())
+            .then((data) => {
+                setFrameworks(data);
+            })
+    }, [])
 
     return (
         <div className='bg-neutral-800 text-white min-h-screen'>
-            <Header 
-                isMenuOpen={true} 
-                setIsMenuOpen={() => { }} 
+            <Header
+                isMenuOpen={true}
+                setIsMenuOpen={() => { }}
                 showArrow={false}
             />
 
@@ -29,12 +27,12 @@ export default function AboutMe() {
                     {/* Header/Intro Section */}
                     <h1 className="text-4xl font-semibold mb-4">About Me</h1>
                     <p className="text-lg mb-6 text-neutral-400">
-                        Hi, I'm Navin, a passionate full-stack developer with a love for building applications of any kind.
-                        With experience in a variety of technologies, I specialize in creating different
+                        Hi, I'm Navin, a developer with love for building different applications.
+                        Creating different
                         {' '}
                         <span
                             className="text-red-500 hover:cursor-pointer hover:underline"
-                            onClick={() => window.location.href = '/projects'}
+                            onClick={() => window.location.href = '/frameworks/projects'}
                         >
                             projects
                         </span> for any needs.
@@ -43,7 +41,7 @@ export default function AboutMe() {
                     {/* Image Section */}
                     <div className='flex justify-center mb-8'>
                         <Image
-                            src='/profile.png'
+                            src='/Navin.png'
                             alt='Profile Picture'
                             width={150}
                             height={150}
@@ -55,8 +53,8 @@ export default function AboutMe() {
                     <div className="max-w-3xl mx-auto mb-16">
                         <h2 className="text-2xl font-semibold mb-4">What I Do</h2>
                         <p className="text-lg text-neutral-400">
-                            I create applications that are both clean and efficient for individuals.
-                            My focus is on frontend and backend development, delivering interactive user interfaces and seamless functionality.
+                            I create applications that are easy for individuals to use.
+                            My focus is on frontend and backend development.
                         </p>
                     </div>
 
@@ -86,12 +84,6 @@ export default function AboutMe() {
                             If you're interested in working together or just want to chat about tech, feel free to reach out! You can find me on social media or contact me directly.
                         </p>
                         <div className="flex justify-center gap-4">
-                            <a
-                                href="https://discord.com/channels/@me/863508137080127518"
-                                className="p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 duration-300"
-                            >
-                                My Discord
-                            </a>
                             <a
                                 href="https://github.com/CodeByNavin"
                                 target="_blank"

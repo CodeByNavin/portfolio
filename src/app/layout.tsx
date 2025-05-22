@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Wrapper } from '@/app/Wrapper'
+import "./global.css";
 
 export const metadata: Metadata = {
-  title: "Navin",
-  description: "Front-end Developer",
+  title: "CodeByNavin",
+  description: "Portfolio of Navin",
 };
 
 export default function RootLayout({
@@ -15,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Wrapper>
-          {children}
-        </Wrapper>
+        {children}
       </body>
     </html>
   );

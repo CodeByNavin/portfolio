@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { collapsedXVarients } from '../../../../lib/varients/navigation';
 import NavLink from './navLink';
-import { useSession, signOut } from 'next-auth/react'
 
 export default function Header({
 	isMenuOpen,
@@ -34,7 +33,6 @@ export default function Header({
 		return () => window.removeEventListener('resize', handleResize);
 	}, [setCollapsed]);
 
-	const { data: session } = useSession()
 
 	return (
 		<>
@@ -67,31 +65,9 @@ export default function Header({
 								transition={{ duration: 0.5, ease: 'easeInOut' }}
 								className='flex flex-row max-lg:flex-col items-center gap-8 text-neutral-400 navS'
 							>
-								<NavLink name='About' />
-								<NavLink name='Projects' />
-								<Link
-									className="rounded-2xl duration-300 p-1 hover:text-white"
-									href={'https://discord.com/users/863508137080127518'}
-								>
-									Contact
-								</Link>
-								{!session ? (
-									<Link
-										href="/signin"
-										className='bg-red-500/70 text-white rounded-2xl px-2 duration-300 hover:scale-110 p-1'
-									>
-										Sign In
-									</Link>
-								) : (
-									<button
-										onClick={() => signOut()}
-										className='bg-red-500/70 text-white rounded-2xl px-2 duration-300 hover:scale-110 p-1'
-									>
-										Sign Out
-									</button>
-								)}
-
-
+								<NavLink name='Home' href='/' />
+								<NavLink name='About' href='/about' />
+								<NavLink name='Projects' href='/projects' />
 							</motion.nav>
 						)}
 					</AnimatePresence>

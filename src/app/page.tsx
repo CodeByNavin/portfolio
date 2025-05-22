@@ -1,7 +1,6 @@
 "use client"
 import Image from 'next/image';
-import Header from './components/navigation/header';
-import Link from 'next/link';
+import Header from '@/app/components/navigation/header';
 
 export default function Home() {
 
@@ -19,7 +18,16 @@ export default function Home() {
 							<div className='absolute top-0 left-0 size-5 bg-neutral-900/60 rotate-45' />
 							<div className='absolute bottom-0 right-0 size-5 bg-neutral-900/60 rotate-45' />
 							<h2 className='font-poppins text-red-500'>Hey, I am</h2>
-							<h1 className='text-4xl font-semibold'>Navin (Baymax) </h1>
+							<div className="flex flex-row items-center gap-4 ml-[-1.5rem] pt-3">
+								<Image
+									src='/Navin.png'
+									alt='Navin'
+									width={80}
+									height={80}
+									className='rounded-full object-cover border-1 border-red-500'
+								/>
+								<h1 className='text-4xl font-semibold'>Navin</h1>
+							</div>
 						</div>
 					</div>
 
@@ -30,23 +38,11 @@ export default function Home() {
 						<div className='absolute top-6 -right-1 size-3 bg-white/70 rotate-45' />
 						<h1 className='font-poppins text-3xl'>About Me</h1>
 						<span className='max-lg text-wrap'>
-							I am a full-stack developer, with a passion for technology making different types of applications.
+							I am a developer, with a passion for making different types of applications.
 						</span>
 					</div>
 				</section>
 				<div className='absolute top-0 left-0 h-screen w-32 bg-red-500/65 max-lg:hidden' />
-				<div className='absolute bottom-6 right-5 group'>
-					<Link
-						href='https://discord.com/users/863508137080127518'
-						target='_blank'
-						className='absolute bottom-1 right-1 w-[50px] h-[50px] hover:scale-110 duration-300 cursor-pointer z-10'
-					>
-						<Image src={'/profile.png'} alt='profile' fill={true} className='rounded-full' />
-					</Link>
-					<div className='absolute hidden group-hover:block bottom-16 right-0 w-32 p-2 text-center bg-neutral-900 text-white rounded-lg shadow-md duration-300 transition-all'>
-						<span className='text-sm'>Feel free to reach out for any questions!</span>
-					</div>
-				</div>
 			</div>
 		</>
 	);
