@@ -1,0 +1,7 @@
+{/* Corners */}
+<div className='absolute w-1 h-12 top-0 left-0 bg-red-500' />
+<div className='absolute w-1 h-12 -top-6 left-[1.25rem] translate-x-1/2 bg-red-500 rotate-90' />
+
+{/* Stars */}
+<div className='absolute top-0 right-4 size-3 bg-white/70 rotate-45' />
+<div className='absolute top-6 -right-1 size-3 bg-white/70 rotate-45' />

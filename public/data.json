@@ -1,0 +1,40 @@
+{
+    "languages": [{
+            "name": "JavaScript",
+            "img": "/languages/javascript.svg"
+        },
+        {
+            "name": "Typescript",
+            "img": "/languages/typescript.svg"
+        }
+    ],
+    "frameworks": [{
+            "name": "Express",
+            "img": "/frameworks/express.svg"
+        },
+        {
+            "name": "MongoDB",
+            "img": "/frameworks/mongodb.svg"
+        },
+        {
+            "name": "Mongoose",
+            "img": "/frameworks/mongoose.svg"
+        },
+        {
+            "name": "Next.js",
+            "img": "/frameworks/Nextjs.png"
+        },
+        {
+            "name": "Node.js",
+            "img": "/frameworks/nodejs.svg"
+        },
+        {
+            "name": "React",
+            "img": "/frameworks/react.svg"
+        },
+        {
+            "name": "Tailwind CSS",
+            "img": "/frameworks/tailwindcss.svg"
+        }
+    ]
+}

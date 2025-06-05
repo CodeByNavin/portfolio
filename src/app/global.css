@@ -6,14 +6,3 @@
     --color-secondary: #333333;
     --color-accent: #ef4444;
 }
-
-.navS > *:nth-last-child() {
-  transition: 0.3s all ease-in-out;
-  border-bottom: 2px solid transparent;
-  padding: 0.35rem;
-}
-
-.navS > *:hover:nth-last-child() {
-  color: white;
-  border-bottom: 2px solid #ef4444;
-}
