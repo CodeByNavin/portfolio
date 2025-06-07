@@ -1,17 +1,26 @@
 "use client"
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import ProjectCard, { ProjectData } from './components/project';
 
 export default function Home() {
 	const [data, setData] = useState<{ frameworks: { name: string; img: string }[], languages: { name: string; img: string }[] }>({ frameworks: [], languages: [] });
+	const [projects, setProjects] = useState<ProjectData[]>([]);
 
 	// Fetch data from data.json
 	useEffect(() => {
-		fetch('/data.json')
-			.then((response) => response.json())
-			.then((data) => {
-				setData(data);
-			});
+		Promise.all([
+			fetch('/json/data.json')
+				.then((response) => response.json())
+				.then((data) => {
+					setData(data);
+				}),
+			fetch('/json/projects.json')
+				.then((response) => response.json())
+				.then((projects) => {
+					setProjects(projects);
+				})
+		])
 	}, []);
 
 
@@ -24,18 +33,18 @@ export default function Home() {
 						<Image
 							src='/Navin.png'
 							alt='Navin'
-							width={80}
 							height={80}
+							width={80}
 							className='rounded-full object-cover border-1 border-red-500'
 						/>
-						<h1 className='font-poppins text-4xl text-center'>Hey i{"'"}m Navin</h1>
-						<span className='text-wrap text-center'>Developer</span>
+						<h1 className='font-poppins text-4xl text-center'>Hey I{"'"}m Navin</h1>
+						<span className='text-wrap text-center'>A Developer</span>
 					</div>
 
 					{/* Right: Info, Frameworks, Languages */}
 					<div className='flex flex-col w-2.8/3 max-xl:w-full gap-8 p-8'>
 						{/* Info text inline with name/role */}
-						<div className='relative flex flex-col gap-2 h-fit p-8 max-lg:gap-4 max-lg:px-24 max-lg:text-nowrap max-xl:max-w-xl 2xl:max-w-xl'>
+						<div className='relative flex flex-col gap-2 h-fit p-8 max-lg:gap-4 max-lg:px-24 max-lg:text-nowrap max-xl:max-w-xl 2xl:max-w-xl mt-10'>
 							<div className='absolute w-1 h-12 top-0 left-0 bg-red-500' />
 							<div className='absolute w-1 h-12 -top-6 left-[1.25rem] translate-x-1/2 bg-red-500 rotate-90' />
 							<p className='text-lg max-w-2xl text-wrap'>
@@ -74,7 +83,28 @@ export default function Home() {
 						</div>
 					</div>
 				</section>
-				<div className='absolute top-0 left-0 h-screen w-32 bg-red-500/65 max-lg:hidden' />
+
+				{projects.length > 0 && (
+					<section>
+						{/* Projects */}
+						<h1 className='text-2xl font-poppins text-center text-white mt-8'>Projects</h1>
+						<div className='flex flex-wrap justify-center gap-4 p-8'>
+							{projects?.map((project) => (
+								<ProjectCard
+									key={project.title}
+									data={project}
+									allFrameworks={[
+										...data.frameworks.map(f => ({ ...f, icon: f.img })),
+										...data.languages.map(l => ({ ...l, icon: l.img }))
+									]}
+								/>
+							))}
+						</div>
+					</section>
+				)}
+
+
+				<div className='absolute top-0 left-0 h-full w-32 bg-red-500/65 max-lg:hidden' />
 			</div>
 		</>
 	);

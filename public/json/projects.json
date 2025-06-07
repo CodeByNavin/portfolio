@@ -1,0 +1,6 @@
+[{
+    "title": "Memory Game",
+    "timeline": "May 19th - May 21st, 2025",
+    "description": "A simple memory game where you have to find pairs of cards. The game is built using React and Tailwind CSS.",
+    "frameworks": ["JavaScript", "Node.js", "React", "Tailwind CSS", "TypeScript"]
+}]
