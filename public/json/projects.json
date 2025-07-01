@@ -2,10 +2,18 @@
     "title": "Memory Game",
     "timeline": "May 19th - May 21st, 2025",
     "description": "A simple memory game where you have to find pairs of cards. The game is built using React and Tailwind CSS.",
-    "frameworks": ["JavaScript", "Node.js", "React", "Tailwind CSS", "TypeScript"]
+    "frameworks": ["JavaScript", "Node.js", "React", "Tailwind CSS", "TypeScript"],
+    "link": "https://memory.codebynavin.me/",
+    "image": {
+        "src": "/images/memory-game.png",
+        "name": "Memory Game",
+        "width": 110,
+        "height": 110
+    }
 }, {
-    "title": "Memory Game",
+    "title": "Local DB",
     "timeline": "June 28th - July 1st, 2025",
     "description": "A local version of mongodb in a JSON file, same features as mongoose",
-    "frameworks": ["Node.js", "TypeScript"]
+    "frameworks": ["Node.js", "TypeScript"],
+    "link": "https://github.com/CodeByNavin/Local_DB"
 }]

@@ -10,7 +10,7 @@ export type Framework = {
 
 export type ProjectData = {
   image?: {
-    data: string;
+    src: string;
     name: string;
     width: number;
     height: number;
@@ -18,7 +18,8 @@ export type ProjectData = {
   title: string;
   timeline: string;
   description: string;
-  frameworks?: string[]; 
+  frameworks?: string[];
+  link?: string;
 };
 
 
@@ -27,7 +28,7 @@ export default function ProjectCard({
   allFrameworks,
 }: {
   data: ProjectData;
-  allFrameworks: Framework[]; 
+  allFrameworks: Framework[];
 }) {
   const [showFrameworks, setShowFrameworks] = useState<boolean>(false);
 
@@ -48,10 +49,10 @@ export default function ProjectCard({
       <div className="absolute -top-3 left-2.5 h-6 w-1 rotate-90 rounded bg-accent" />
 
       <Image
-        src={data.image?.data ? `${data.image.data}` : '/NoImage.png'}
+        src={data.image?.src ? `${data.image.src}` : '/NoImage.png'}
         alt={data.image?.name || 'No Image'}
         width={160}
-        height={100}
+        height={160}
         className="mb-2 h-[100px] w-full rounded-lg object-cover p-1"
       />
       <h1 className="flex flex-row items-center gap-2 text-lg font-semibold">
@@ -62,12 +63,22 @@ export default function ProjectCard({
         </span>
       </h1>
       <p className="line-clamp-3 pb-2 pt-1 text-xs">{data.description}</p>
-      <button
-        className="mt-2 rounded bg-accent px-3 py-1 text-xs font-semibold transition hover:bg-red-600"
-        onClick={() => setShowFrameworks(v => !v)}
-      >
-        {showFrameworks ? 'Hide Frameworks' : 'Show Frameworks'}
-      </button>
+      <div>
+        <button
+          className="mt-2 rounded bg-accent px-3 py-1 text-xs font-semibold transition hover:bg-red-600"
+          onClick={() => setShowFrameworks(v => !v)}
+        >
+          {showFrameworks ? 'Hide Frameworks' : 'Show Frameworks'}
+        </button>
+        {data?.link && (
+          <button
+            className="mt-2 rounded bg-accent px-3 py-1 text-xs font-semibold transition hover:bg-red-600"
+            onClick={() => window.open(data.link, '_blank')}
+          >
+            View Project
+          </button>
+        )}
+      </div>
       <AnimatePresence>
         {showFrameworks && (
           <motion.div
