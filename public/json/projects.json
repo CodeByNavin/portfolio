@@ -1,4 +1,16 @@
 [{
+    "title": "APIForge",
+    "timeline": "June 14th 2025 - Now",
+    "description": "A tool to create APIs from JSON files, with features like authentication, rate limiting, and more.",
+    "frameworks": ["Node.js", "TypeScript", "Express", "mongoose", "React", "Tailwind CSS"],
+    "link": "https://apiforge.codebynavin.me/",
+    "image": {
+        "src": "/images/apiforge.png",
+        "name": "APIForge",
+        "width": 110,
+        "height": 110
+    }
+}, {
     "title": "Memory Game",
     "timeline": "May 19th - May 21st, 2025",
     "description": "A simple memory game where you have to find pairs of cards. The game is built using React and Tailwind CSS.",
