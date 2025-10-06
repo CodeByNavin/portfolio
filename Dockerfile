@@ -7,7 +7,7 @@ COPY package.json ./
 ENV NODE_ENV=production
 RUN npm install 
 
-RUN npm build
+RUN npm run build
 
 
 FROM base AS dokploy
@@ -21,4 +21,4 @@ COPY --from=build /app/package.json ./package.json
 COPY --from=build /app/node_modules ./node_modules
 
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "start" ]
